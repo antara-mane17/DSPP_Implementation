@@ -1,0 +1,26 @@
+%implementation
+dur=input('Recording time?');
+% Record your voice for 5 seconds.
+disp('Get ready');
+pause(2);
+disp('Start speaking.');
+recObj = audiorecorder;
+recordblocking(recObj, dur);
+disp('End of Recording.');
+
+% Play back the recording.
+% play(recObj);
+
+% Store data in double-precision array.
+
+
+
+
+myRecording = getaudiodata(recObj);
+fs=44100;
+save myRecording;
+load('myRecording.mat');
+% Write audio in a file 
+pr = 'myDataFile.wav';
+audiowrite(pr,y,fs);
+disp('i M HERE');
